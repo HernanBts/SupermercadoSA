@@ -3,20 +3,30 @@
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <a href="javascript:document.getElementById('logoutForm').submit()" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
+            <i class="fas fa-user-tie fa-3x"></i>
+            <p>Cerrar sesion</p>
+        </a>
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+    <div class="w3-padding-large">
+        <div class="w3-half w3-margin-bottom">
+            <a href="@Url.Action("Register", "Account")" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity" id="loginBtn" title="Admin login">
+                <i class="fas fa-user fa-3x"></i>
+                <p>Registrarse</p>
+            </a>
+        </div>
+        <div class="w3-half w3-quarter w3-sectio">
+            <a href="@Url.Action("Login", "Account")" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity" id="loginBtn" title="Admin login">
+                <i class="fas fa-user-tie fa-3x"></i>
+                <p>Ingresar</p>
+            </a>
+        </div>
+    </div>
+
+
 }

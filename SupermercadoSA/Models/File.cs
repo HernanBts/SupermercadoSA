@@ -19,7 +19,7 @@ namespace SupermercadoSA.Models
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         [Display(Name = "Estado:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]

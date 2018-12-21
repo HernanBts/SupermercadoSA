@@ -19,31 +19,31 @@ namespace SupermercadoSA.Models
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         [Display(Name = "Fecha elaboración:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public string ElaborationDate { get; set; }
+        public DateTime ElaborationDate { get; set; }
 
         [Display(Name = "Fecha vencimiento:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public string ExpirationDate { get; set; }
+        public DateTime ExpirationDate { get; set; }
 
         [Display(Name = "Precio:")]
         [DataType(DataType.Currency)]
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public string Peice { get; set; }
+        public decimal Peice { get; set; }
 
         [Display(Name = "Cantidad:")]
         [DataType(DataType.Currency)]
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
 
         [Display(Name = "MR:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]

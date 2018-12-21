@@ -123,6 +123,7 @@ namespace SupermercadoSA.Controllers
             catch (Exception ex)
             {
             }
+
             return RedirectToAction("Index");
         }
 

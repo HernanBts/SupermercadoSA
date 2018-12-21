@@ -8,11 +8,11 @@ namespace SupermercadoSA.ModelViews
 {
     public class InventoryView
     {
-        public List<Batch> Batches { get; set; }
+        public Batch Batch { get; set; }
 
-        public List<Bromatologist> Bromatologists { get; set; }
+        public Bromatologist Bromatologist { get; set; }
 
-        public List<File> Files { get; set; }
+        public File File { get; set; }
 
         public List<Verification> Verifications { get; set; }
     }

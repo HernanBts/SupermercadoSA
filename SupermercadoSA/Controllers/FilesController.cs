@@ -14,14 +14,8 @@ namespace SupermercadoSA.Controllers
     {
         private SupermercadoSAContext db = new SupermercadoSAContext();
 
-        public ActionResult InventoryView()
-        {
-
-
-            return View();
-        }
-            // GET: Files
-            public ActionResult Index()
+        // GET: Files
+        public ActionResult Index()
         {
             var files = db.Files.Include(f => f.Batch).Include(f => f.Bromatologist);
             return View(files.ToList());
@@ -45,7 +39,7 @@ namespace SupermercadoSA.Controllers
         // GET: Files/Create
         public ActionResult Create()
         {
-            ViewBag.BatchID = new SelectList(db.Batches, "BatchID", "Date");
+            ViewBag.BatchID = new SelectList(db.Batches, "BatchID", "BatchID");
             ViewBag.BromatologistID = new SelectList(db.Bromatologists, "BromatologistID", "Name");
             return View();
         }
@@ -55,7 +49,7 @@ namespace SupermercadoSA.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FileID,BatchID,Date,State,Remark,BromatologistID")] File file)
+        public ActionResult Create([Bind(Include = "FileID,BatchID,Date,Remark,BromatologistID")] File file)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +58,7 @@ namespace SupermercadoSA.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BatchID = new SelectList(db.Batches, "BatchID", "Date", file.BatchID);
+            ViewBag.BatchID = new SelectList(db.Batches, "BatchID", "BatchID", file.BatchID);
             ViewBag.BromatologistID = new SelectList(db.Bromatologists, "BromatologistID", "Name", file.BromatologistID);
             return View(file);
         }
@@ -81,7 +75,7 @@ namespace SupermercadoSA.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.BatchID = new SelectList(db.Batches, "BatchID", "Date", file.BatchID);
+            ViewBag.BatchID = new SelectList(db.Batches, "BatchID", "BatchID", file.BatchID);
             ViewBag.BromatologistID = new SelectList(db.Bromatologists, "BromatologistID", "Name", file.BromatologistID);
             return View(file);
         }
@@ -91,7 +85,7 @@ namespace SupermercadoSA.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FileID,BatchID,Date,State,Remark,BromatologistID")] File file)
+        public ActionResult Edit([Bind(Include = "FileID,BatchID,Date,Remark,BromatologistID")] File file)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +93,7 @@ namespace SupermercadoSA.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BatchID = new SelectList(db.Batches, "BatchID", "Date", file.BatchID);
+            ViewBag.BatchID = new SelectList(db.Batches, "BatchID", "BatchID", file.BatchID);
             ViewBag.BromatologistID = new SelectList(db.Bromatologists, "BromatologistID", "Name", file.BromatologistID);
             return View(file);
         }
@@ -133,6 +127,7 @@ namespace SupermercadoSA.Controllers
             catch (Exception ex)
             {
             }
+
             return RedirectToAction("Index");
         }
 

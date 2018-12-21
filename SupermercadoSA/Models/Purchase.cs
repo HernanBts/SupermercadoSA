@@ -19,13 +19,13 @@ namespace SupermercadoSA.Models
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         [Display(Name = "Total:")]
         [DataType(DataType.Currency)]
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public string Total { get; set; }
+        public decimal Total { get; set; }
 
         // Relations
 

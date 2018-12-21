@@ -223,6 +223,7 @@
     <Compile Include="Controllers\PackagesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\PurchasesController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SatisfiesController.cs" />
     <Compile Include="Controllers\VerificationsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -247,6 +248,7 @@
     <Compile Include="Models\Satisfy.cs" />
     <Compile Include="Models\SupermercadoSAContext.cs" />
     <Compile Include="Models\Verification.cs" />
+    <Compile Include="ModelViews\BatchesView.cs" />
     <Compile Include="ModelViews\InventoryView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -385,6 +387,8 @@
     <Content Include="Views\Batches\Index.cshtml" />
     <Content Include="Views\Inventories\Index.cshtml" />
     <Content Include="Views\Inventories\NewInventory.cshtml" />
+    <Content Include="Views\Inventories\ControlBatch.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

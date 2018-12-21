@@ -14,6 +14,7 @@ namespace SupermercadoSA.ModelViews
 
         public File File { get; set; }
 
+        public List<Control> controls { get; set; }
         public List<Verification> Verifications { get; set; }
     }
 }

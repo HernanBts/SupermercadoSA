@@ -39,8 +39,12 @@ namespace SupermercadoSA.Controllers
         // GET: Batches/Create
         public ActionResult Create()
         {
+            var list = db.Characteristics.ToList();
+            list.Add(new Characteristic { CharacteristicID = 0, Name = "[Seleccione un producto...]"});
+            list = list.OrderBy(n => n.Name).ToList();
+
             ViewBag.MRID = new SelectList(db.MRs, "MRID", "Number");
-            ViewBag.ProductID = new SelectList(db.Products, "ProductID", "RNPA");
+            ViewBag.CharacteristicID = new SelectList(list, "CharacteristicID", "Name");
             ViewBag.PurchaseID = new SelectList(db.Purchases, "PurchaseID", "Date");
             return View();
         }

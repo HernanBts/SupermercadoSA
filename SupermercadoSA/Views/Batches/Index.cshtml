@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.MR.Number)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Product.RNPA)
+            @Html.DisplayNameFor(model => model.Product.Characteristic.Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Purchase.Date)
@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.MR.Number)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Product.RNPA)
+            @Html.DisplayFor(modelItem => item.Product.Characteristic.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Purchase.Date)

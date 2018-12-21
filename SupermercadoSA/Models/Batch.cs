@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -51,6 +52,9 @@ namespace SupermercadoSA.Models
 
         [Display(Name = "Compra:")]
         public int? PurchaseID { get; set; }
+        
+        // Name
+        public string Title { get { return string.Format("{0} {1}", Product.Characteristic.Name, Product.RNPA); } }
 
         // Relations
 

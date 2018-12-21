@@ -10,107 +10,107 @@ using SupermercadoSA.Models;
 
 namespace SupermercadoSA.Controllers
 {
-    public class CategoriesController : Controller
+    public class CharacteristicsController : Controller
     {
         private SupermercadoSAContext db = new SupermercadoSAContext();
 
-        // GET: Categories
+        // GET: Characteristics
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            return View(db.Characteristics.ToList());
         }
 
-        // GET: Categories/Details/5
+        // GET: Characteristics/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Characteristic characteristic = db.Characteristics.Find(id);
+            if (characteristic == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(characteristic);
         }
 
-        // GET: Categories/Create
+        // GET: Characteristics/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Categories/Create
+        // POST: Characteristics/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CategoryID,Type,Description")] Category category)
+        public ActionResult Create([Bind(Include = "CharacteristicID,Name,Brand")] Characteristic characteristic)
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
+                db.Characteristics.Add(characteristic);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(category);
+            return View(characteristic);
         }
 
-        // GET: Categories/Edit/5
+        // GET: Characteristics/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Characteristic characteristic = db.Characteristics.Find(id);
+            if (characteristic == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(characteristic);
         }
 
-        // POST: Categories/Edit/5
+        // POST: Characteristics/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CategoryID,Type,Description")] Category category)
+        public ActionResult Edit([Bind(Include = "CharacteristicID,Name,Brand")] Characteristic characteristic)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
+                db.Entry(characteristic).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(category);
+            return View(characteristic);
         }
 
-        // GET: Categories/Delete/5
+        // GET: Characteristics/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Characteristic characteristic = db.Characteristics.Find(id);
+            if (characteristic == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(characteristic);
         }
 
-        // POST: Categories/Delete/5
+        // POST: Characteristics/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
+            Characteristic characteristic = db.Characteristics.Find(id);
+            db.Characteristics.Remove(characteristic);
             try
             {
                 db.SaveChanges();

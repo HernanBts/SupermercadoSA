@@ -10,107 +10,107 @@ using SupermercadoSA.Models;
 
 namespace SupermercadoSA.Controllers
 {
-    public class CategoriesController : Controller
+    public class PackagesController : Controller
     {
         private SupermercadoSAContext db = new SupermercadoSAContext();
 
-        // GET: Categories
+        // GET: Packages
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            return View(db.Packages.ToList());
         }
 
-        // GET: Categories/Details/5
+        // GET: Packages/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Package package = db.Packages.Find(id);
+            if (package == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(package);
         }
 
-        // GET: Categories/Create
+        // GET: Packages/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Categories/Create
+        // POST: Packages/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CategoryID,Type,Description")] Category category)
+        public ActionResult Create([Bind(Include = "PackageID,Type,Material")] Package package)
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
+                db.Packages.Add(package);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(category);
+            return View(package);
         }
 
-        // GET: Categories/Edit/5
+        // GET: Packages/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Package package = db.Packages.Find(id);
+            if (package == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(package);
         }
 
-        // POST: Categories/Edit/5
+        // POST: Packages/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CategoryID,Type,Description")] Category category)
+        public ActionResult Edit([Bind(Include = "PackageID,Type,Material")] Package package)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
+                db.Entry(package).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(category);
+            return View(package);
         }
 
-        // GET: Categories/Delete/5
+        // GET: Packages/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Package package = db.Packages.Find(id);
+            if (package == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(package);
         }
 
-        // POST: Categories/Delete/5
+        // POST: Packages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
+            Package package = db.Packages.Find(id);
+            db.Packages.Remove(package);
             try
             {
                 db.SaveChanges();

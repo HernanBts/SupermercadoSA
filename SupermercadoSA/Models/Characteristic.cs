@@ -6,21 +6,20 @@ using System.Web;
 
 namespace SupermercadoSA.Models
 {
-    public class Category
+    public class Characteristic
     {
         [Key]
-        public int CategoryID { get; set; }
+        public int CharacteristicID { get; set; }
 
-        [Display(Name = "Tipo categoria:")]
+        [Display(Name = "Nombre de fantasia:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public string Type { get; set; }
+        public string Name { get; set; }
 
-        [Display(Name = "Descripcion:")]
+        [Display(Name = "Marca:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        [DataType(DataType.MultilineText)]
-        public string Description { get; set; }
-
-        //Relations 
+        public string Brand { get; set; }
+        
+        //Relations
 
         public virtual ICollection<Product> Products { get; set; }
     }

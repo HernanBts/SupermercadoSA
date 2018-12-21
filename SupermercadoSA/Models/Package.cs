@@ -6,21 +6,20 @@ using System.Web;
 
 namespace SupermercadoSA.Models
 {
-    public class Category
+    public class Package
     {
         [Key]
-        public int CategoryID { get; set; }
+        public int PackageID { get; set; }
 
-        [Display(Name = "Tipo categoria:")]
+        [Display(Name = "Tipo envase:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Type { get; set; }
 
-        [Display(Name = "Descripcion:")]
+        [Display(Name = "Material:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        [DataType(DataType.MultilineText)]
-        public string Description { get; set; }
+        public string Material { get; set; }
 
-        //Relations 
+        //Relations
 
         public virtual ICollection<Product> Products { get; set; }
     }

@@ -10,107 +10,107 @@ using SupermercadoSA.Models;
 
 namespace SupermercadoSA.Controllers
 {
-    public class CategoriesController : Controller
+    public class CompaniesController : Controller
     {
         private SupermercadoSAContext db = new SupermercadoSAContext();
 
-        // GET: Categories
+        // GET: Companies
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            return View(db.Companies.ToList());
         }
 
-        // GET: Categories/Details/5
+        // GET: Companies/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Company company = db.Companies.Find(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(company);
         }
 
-        // GET: Categories/Create
+        // GET: Companies/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Categories/Create
+        // POST: Companies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CategoryID,Type,Description")] Category category)
+        public ActionResult Create([Bind(Include = "CompanyID,Name,CUIT,RNE,Address")] Company company)
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
+                db.Companies.Add(company);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(category);
+            return View(company);
         }
 
-        // GET: Categories/Edit/5
+        // GET: Companies/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Company company = db.Companies.Find(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(company);
         }
 
-        // POST: Categories/Edit/5
+        // POST: Companies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CategoryID,Type,Description")] Category category)
+        public ActionResult Edit([Bind(Include = "CompanyID,Name,CUIT,RNE,Address")] Company company)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
+                db.Entry(company).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(category);
+            return View(company);
         }
 
-        // GET: Categories/Delete/5
+        // GET: Companies/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Company company = db.Companies.Find(id);
+            if (company == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(company);
         }
 
-        // POST: Categories/Delete/5
+        // POST: Companies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
+            Company company = db.Companies.Find(id);
+            db.Companies.Remove(company);
             try
             {
                 db.SaveChanges();

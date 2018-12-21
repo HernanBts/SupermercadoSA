@@ -23,11 +23,12 @@ namespace SupermercadoSA.Models
 
         [Display(Name = "Estado:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public bool State { get; set; }
+        public char State { get; set; }
 
         [Display(Name = "Observacion:")]
+        [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public bool Remark { get; set; }
+        public string Remark { get; set; }
 
         [Display(Name = "Bromatologo:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]

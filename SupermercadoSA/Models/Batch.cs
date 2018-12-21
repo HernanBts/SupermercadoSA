@@ -50,7 +50,7 @@ namespace SupermercadoSA.Models
         public int MRID { get; set; }
 
         [Display(Name = "Compra:")]
-        public int PurchaseID { get; set; }
+        public int? PurchaseID { get; set; }
 
         // Relations
 

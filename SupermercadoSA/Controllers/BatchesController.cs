@@ -39,7 +39,7 @@ namespace SupermercadoSA.Controllers
         // GET: Batches/Create
         public ActionResult Create()
         {
-            ViewBag.MRID = new SelectList(db.MRs, "MRID", "MRID");
+            ViewBag.MRID = new SelectList(db.MRs, "MRID", "Number");
             ViewBag.ProductID = new SelectList(db.Products, "ProductID", "RNPA");
             ViewBag.PurchaseID = new SelectList(db.Purchases, "PurchaseID", "Date");
             return View();
@@ -59,7 +59,7 @@ namespace SupermercadoSA.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MRID = new SelectList(db.MRs, "MRID", "MRID", batch.MRID);
+            ViewBag.MRID = new SelectList(db.MRs, "MRID", "Number", batch.MRID);
             ViewBag.ProductID = new SelectList(db.Products, "ProductID", "RNPA", batch.ProductID);
             ViewBag.PurchaseID = new SelectList(db.Purchases, "PurchaseID", "Date", batch.PurchaseID);
             return View(batch);
@@ -77,7 +77,7 @@ namespace SupermercadoSA.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MRID = new SelectList(db.MRs, "MRID", "MRID", batch.MRID);
+            ViewBag.MRID = new SelectList(db.MRs, "MRID", "Number", batch.MRID);
             ViewBag.ProductID = new SelectList(db.Products, "ProductID", "RNPA", batch.ProductID);
             ViewBag.PurchaseID = new SelectList(db.Purchases, "PurchaseID", "Date", batch.PurchaseID);
             return View(batch);
@@ -96,7 +96,7 @@ namespace SupermercadoSA.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MRID = new SelectList(db.MRs, "MRID", "MRID", batch.MRID);
+            ViewBag.MRID = new SelectList(db.MRs, "MRID", "Number", batch.MRID);
             ViewBag.ProductID = new SelectList(db.Products, "ProductID", "RNPA", batch.ProductID);
             ViewBag.PurchaseID = new SelectList(db.Purchases, "PurchaseID", "Date", batch.PurchaseID);
             return View(batch);
@@ -131,6 +131,7 @@ namespace SupermercadoSA.Controllers
             catch (Exception ex)
             {
             }
+
             return RedirectToAction("Index");
         }
 

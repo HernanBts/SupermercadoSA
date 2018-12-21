@@ -11,6 +11,9 @@ namespace SupermercadoSA.Models
         [Key]
         public int ProductID { get; set; }
 
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+        public int CharacteristicID { get; set; }
+
         [Display(Name = "RNPA:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string RNPA { get; set; }
@@ -29,16 +32,13 @@ namespace SupermercadoSA.Models
         public string ExtraDescription { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public int PackageID { get; set; }
-
-        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public int CharacteristicID { get; set; }
-
-        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public int CompanyID { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public int CategoryID { get; set; }
+
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+        public int PackageID { get; set; }
 
         // Relations
 
@@ -49,5 +49,7 @@ namespace SupermercadoSA.Models
         public virtual Company Company { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public virtual ICollection<Batch> Batches { get; set; }
     }
 }

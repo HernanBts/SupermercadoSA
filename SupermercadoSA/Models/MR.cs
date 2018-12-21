@@ -13,7 +13,7 @@ namespace SupermercadoSA.Models
 
         [Display(Name = "Numero:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public int Number { get; set; }
+        public string Number { get; set; }
 
         [Display(Name = "Temperatura minima:")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]

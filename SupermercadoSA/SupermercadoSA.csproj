@@ -246,6 +246,7 @@
     <Compile Include="Models\Satisfy.cs" />
     <Compile Include="Models\SupermercadoSAContext.cs" />
     <Compile Include="Models\Verification.cs" />
+    <Compile Include="ModelViews\InventoryView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

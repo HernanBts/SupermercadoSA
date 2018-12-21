@@ -14,8 +14,14 @@ namespace SupermercadoSA.Controllers
     {
         private SupermercadoSAContext db = new SupermercadoSAContext();
 
-        // GET: Files
-        public ActionResult Index()
+        public ActionResult InventoryView()
+        {
+
+
+            return View();
+        }
+            // GET: Files
+            public ActionResult Index()
         {
             var files = db.Files.Include(f => f.Batch).Include(f => f.Bromatologist);
             return View(files.ToList());

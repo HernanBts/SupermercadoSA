@@ -1,0 +1,42 @@
+﻿@model SupermercadoSA.Models.MR
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TempMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TempMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TempMax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TempMax)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MRID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

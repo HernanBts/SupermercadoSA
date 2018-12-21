@@ -34,5 +34,23 @@ namespace SupermercadoSA.Models
         public System.Data.Entity.DbSet<SupermercadoSA.Models.Package> Packages { get; set; }
 
         public System.Data.Entity.DbSet<SupermercadoSA.Models.Product> Products { get; set; }
+
+        public System.Data.Entity.DbSet<SupermercadoSA.Models.Customer> Customers { get; set; }
+
+        public System.Data.Entity.DbSet<SupermercadoSA.Models.Bromatologist> Bromatologists { get; set; }
+
+        public System.Data.Entity.DbSet<SupermercadoSA.Models.Purchase> Purchases { get; set; }
+
+        public System.Data.Entity.DbSet<SupermercadoSA.Models.MR> MRs { get; set; }
+
+        public System.Data.Entity.DbSet<SupermercadoSA.Models.Satisfy> Satisfies { get; set; }
+
+        public System.Data.Entity.DbSet<SupermercadoSA.Models.Verification> Verifications { get; set; }
+
+        public System.Data.Entity.DbSet<SupermercadoSA.Models.Control> Controls { get; set; }
+
+        public System.Data.Entity.DbSet<SupermercadoSA.Models.File> Files { get; set; }
+
+        public System.Data.Entity.DbSet<SupermercadoSA.Models.Batch> Batches { get; set; }
     }
 }

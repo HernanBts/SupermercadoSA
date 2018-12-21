@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SupermercadoSA.Models.Satisfy>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MR.MRID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Verification.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MR.MRID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Verification.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SatisfyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SatisfyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SatisfyID })
+        </td>
+    </tr>
+}
+
+</table>

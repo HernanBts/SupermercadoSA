@@ -1,0 +1,82 @@
+﻿@model SupermercadoSA.Models.Batch
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Batch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MR.MRID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MR.MRID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.RNPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.RNPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Purchase.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Purchase.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElaborationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElaborationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BatchID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

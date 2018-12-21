@@ -1,0 +1,88 @@
+﻿@model SupermercadoSA.Models.Batch
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Batch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MR.MRID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MR.MRID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.RNPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.RNPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Purchase.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Purchase.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElaborationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElaborationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

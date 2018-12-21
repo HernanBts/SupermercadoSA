@@ -1,0 +1,42 @@
+﻿@model SupermercadoSA.Models.Control
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Control</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.File.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.File.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Verification.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Verification.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Result)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Result)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ControlID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
